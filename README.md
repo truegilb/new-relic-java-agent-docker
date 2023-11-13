@@ -78,6 +78,12 @@ Steps to publish image to Docker Hub after it has been built.
 
 A helm chart has already been created (i.e. `helm create <chart_name>`) and configured for this project. All helm chart files can be found in the `helm-petclinic-app` directory.
 
+### Requirements
+
+* Install helm: https://helm.sh/docs/intro/install/
+* Install kubectl: https://kubernetes.io/docs/tasks/tools/
+* Install minikube (for local testing): https://minikube.sigs.k8s.io/docs/start/
+
 ### Configure Helm Chart To Use The Docker File For Petclinic Service
 
 A publicly available Docker file of the SpringBoot Petclinic service with the New Relic Java agent has been published to Dockerhub repository at: `jkellernr/new-relic-java-agent-spring-petclinic:petclinic-app`
