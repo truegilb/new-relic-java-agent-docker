@@ -101,7 +101,7 @@ helm install helm-petclinic-app-release --dry-run \
 --debug helm-petclinic-app
 ```
 
-#### Helm Chart Install Dry Run Debugging
+#### Helm Chart Install
 
 Install (i.e. `helm install <chart_release_name> <chart_name>`) the helm chart:  
 ```shell
