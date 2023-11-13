@@ -134,7 +134,7 @@ helm uninstall helm-petclinic-app-release
 
 #### Verifying Helm Chart Deployment
 
-Check deployment: `helm list -a` and `kubectl get deployments`
+Check deployment: `helm list -a` and `kubectl get deployments`  
 Check where deployment is running: `kubectl get service`
 
 #### Debugging
