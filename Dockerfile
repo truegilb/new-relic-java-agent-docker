@@ -24,7 +24,7 @@ WORKDIR /petclinic-app
 COPY --from=build /spring-petclinic/target/spring-petclinic*.jar .
 
 # Add New Relic Java agent jar to work directory
-RUN curl -O https://download.newrelic.com/newrelic/java-agent/newrelic-agent/8.7.0/newrelic-agent-8.7.0.jar
+RUN curl -O https://download.newrelic.com/newrelic/java-agent/newrelic-agent/8.11.0/newrelic-agent-8.11.0.jar
 
 # SpringBoot listens on port 8080 by default
 # To change it set the -Dserver.port=8083 system propery in the following CMD step
@@ -42,4 +42,6 @@ ENV NEW_RELIC_METRIC_INGEST_URI=https://metric-api.newrelic.com/metric/v1
 ENV NEW_RELIC_EVENT_INGEST_URI=https://insights-collector.newrelic.com/v1/accounts/events
 
 # Run SpringBoot PetClinic Java service with the New Relic Java agent attached
-CMD java -javaagent:newrelic-agent-8.7.0.jar -jar spring-petclinic*.jar
+CMD java -javaagent:newrelic-agent-8.11.0.jar -jar spring-petclinic*.jar
+# TODO Use below line instead to run without the Java agent
+#CMD java -jar spring-petclinic*.jar
