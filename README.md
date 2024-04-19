@@ -43,6 +43,9 @@ Set the following based on which New Relic environment the APM account is associ
 Build and run:
 `docker-compose up -d`
 
+Force a rebuild:
+`docker-compose build`
+
 Stop:
 `docker-compose down`
 
@@ -66,6 +69,8 @@ Example `curl` request:
 `curl --request GET --url http://localhost:8080/vets --header 'content-type: application/json'`
 
 ## Docker Hub
+
+**WARNING**: Publishing to Docker Hub is only necessary if you are deploying to a Kubernetes cluster using the Helm chart instructions below. When publishing to Docker Hub do **NOT** configure any secrets (such as `NEW_RELIC_LICENSE_KEY`) as part of the Docker image. These secrets will instead be configured by the Helm charts and passed through to the Docker container. 
 
 Steps to publish image to Docker Hub after it has been built.
 
