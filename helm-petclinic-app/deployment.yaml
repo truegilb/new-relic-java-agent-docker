@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: test-load-release
+   namespace: default
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         ebpf: test
+   template:
+      metadata:
+         labels:
+            ebpf: test
+      spec:
+         containers:
+            - name: test-load-gen
+              image: truegilbert/test-load
+              imagePullPolicy: Always              
+
